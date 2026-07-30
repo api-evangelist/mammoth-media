@@ -1,0 +1,33 @@
+generated: '2026-07-20'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
+hosts:
+- host: www.tokenbot.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Oct  1 13:25:24 2026 GMT
+  hsts: true
+  hsts_max_age: 31536000
+- host: docs.tokenbot.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Sep  3 00:59:32 2026 GMT
+  hsts: true
+  hsts_max_age: 31536000
+- host: api.tokenbot.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Mar  9 23:59:59 2027 GMT
+  hsts: null
+domains:
+- domain: tokenbot.com
+  dnssec: false
+  caa:
+  - 0 issue "letsencrypt.org"
+  - 0 issue "sectigo.com"
+  - 0 issue "amazon.com"
+  - 0 issue "amazontrust.com"
+  - 0 issue "globalsign.com"
+  spf: false
+  dmarc: true
+  dmarc_policy: none

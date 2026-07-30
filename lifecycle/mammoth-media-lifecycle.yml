@@ -1,0 +1,26 @@
+generated: '2026-07-20'
+method: searched
+source: https://api.tokenbot.com/v1/version ; https://docs.tokenbot.com/home/api-docs/rest-api/overview ; https://status.tokenbot.com
+versioning:
+  scheme: uri-path
+  current: v1
+  api_version: '0.1'
+  data_models_version: '^1.7.0'
+  legacy: Endpoints also reachable without the /v1 prefix as legacy aliases; new integrations should use /v1.
+  docs: https://docs.tokenbot.com/home/api-docs/rest-api/overview
+environments:
+  production: https://api.tokenbot.com/v1
+  development: https://api-dev.tokenbot.com/v1
+status_page: https://status.tokenbot.com
+deprecation:
+  policy_url: null
+  sunset_header: false
+  notes: >-
+    No formal deprecation policy or RFC 8594 Sunset/Deprecation header support
+    documented. One deprecated alias is documented at the event level:
+    `trade.filled` is a deprecated alias of `trade.executed`.
+deprecated_events:
+- trade.filled
+frontend_compatibility:
+- app-dashboard@>=0.1.0
+- admin-dashboard@>=0.1.0

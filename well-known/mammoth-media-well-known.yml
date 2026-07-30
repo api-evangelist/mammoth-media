@@ -1,0 +1,29 @@
+generated: '2026-07-20'
+method: searched
+source: live probes of /.well-known/ on TokenBot hosts
+note: >-
+  No /.well-known/ discovery documents were served with HTTP 200. docs host
+  returns 307 redirects (GitBook), the api host returns 401 (auth required), and
+  the www host returns 404. Recorded for auditability; absence is valid data.
+hosts:
+- host: https://docs.tokenbot.com
+  documents:
+  - {path: /.well-known/security.txt, status: 307}
+  - {path: /.well-known/openid-configuration, status: 307}
+  - {path: /.well-known/oauth-authorization-server, status: 307}
+  - {path: /.well-known/api-catalog, status: 307}
+  - {path: /.well-known/ai-plugin.json, status: 307}
+- host: https://api.tokenbot.com
+  documents:
+  - {path: /.well-known/security.txt, status: 401}
+  - {path: /.well-known/openid-configuration, status: 401}
+  - {path: /.well-known/oauth-authorization-server, status: 401}
+  - {path: /.well-known/api-catalog, status: 401}
+  - {path: /.well-known/ai-plugin.json, status: 401}
+- host: https://www.tokenbot.com
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/openid-configuration, status: 404}
+  - {path: /.well-known/oauth-authorization-server, status: 404}
+  - {path: /.well-known/api-catalog, status: 404}
+  - {path: /.well-known/ai-plugin.json, status: 404}

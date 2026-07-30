@@ -1,0 +1,95 @@
+generated: '2026-07-20'
+method: searched
+status: published
+source: https://docs.tokenbot.com/home/api-docs/mcp/overview
+server:
+  name: tokenbot
+  binary: tokenbot-mcp
+  transport: stdio
+  description: >-
+    The TokenBot MCP server lets AI assistants interact with the TokenBot
+    platform — exchanges, strategies, copiers, trades, and user context — as
+    MCP tools, plus read-only resources and guided prompts.
+auth:
+  backend: TokenBot GraphQL
+  env:
+  - name: GRAPHQL_SERVICE_TOKEN
+    header: X-Service-Token
+  - name: DEFAULT_USER_ID
+    header: X-User-Id
+  runtime_switch: set_user_context (userId or tb_-format API key)
+counts:
+  tools: 25
+  resources: 7
+  prompts: 4
+prompts:
+- onboarding
+- portfolio_summary
+- troubleshoot
+- optimize_strategy
+resources:
+- uri: tokenbot://exchanges/list
+  description: Your exchange accounts
+- uri: tokenbot://strategies/list
+  description: Your strategies
+- uri: tokenbot://copiers/list
+  description: Your copiers
+- uri: tokenbot://trades/list
+  description: Recent trades
+- uri: tokenbot://trades/analytics
+  description: Trade analytics
+- uri: tokenbot://system/supported-exchanges
+  description: Supported exchanges
+- uri: tokenbot://system/health
+  description: Platform health
+tools:
+- name: set_user_context
+  description: Set the acting user for subsequent operations (userId or tb_ API key).
+- name: get_user_context
+  description: Get the current user context.
+- name: list_exchanges
+  description: List all exchange accounts.
+- name: get_exchange
+  description: Get one exchange account by id.
+- name: exchange_test
+  description: Validate exchange API credentials before saving.
+- name: exchange_add
+  description: Add a new exchange account.
+- name: exchange_remove
+  description: Remove an exchange account by id.
+- name: list_supported_exchanges
+  description: List exchanges the platform supports.
+- name: list_strategies
+  description: List all strategies.
+- name: get_strategy
+  description: Get one strategy by id.
+- name: strategy_create
+  description: Create a strategy.
+- name: strategy_update
+  description: Update strategy settings.
+- name: strategy_delete
+  description: Delete a strategy by id.
+- name: strategy_link_copiers
+  description: Attach copiers to a strategy.
+- name: list_copiers
+  description: List all copiers.
+- name: get_copier
+  description: Get one copier by id.
+- name: copier_create
+  description: Create a copier.
+- name: copier_update
+  description: Update copier settings.
+- name: copier_start
+  description: Start (activate) a copier.
+- name: copier_stop
+  description: Stop (pause) a copier.
+- name: copier_delete
+  description: Delete a copier by id.
+- name: list_trades
+  description: List trades (filters strategyId, exchangeAccountId, status, side, limit, offset).
+- name: get_trade
+  description: Get one trade by id.
+- name: get_trade_analytics
+  description: Aggregated trade performance metrics (optional strategyId).
+- name: trade_cancel
+  description: Cancel a trade by id.

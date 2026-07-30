@@ -1,0 +1,44 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.tokenbot.com/home/api-docs/webhooks/overview ; .../events ; .../security
+type: Webhooks
+transport: HTTP POST
+management:
+  register: POST /v1/webhooks
+  fields: [url, events]
+  max_events_per_webhook: 20
+  subscribe_all: '["*"]'
+  cli: [webhooks list, webhooks add, webhooks remove, webhooks test]
+delivery:
+  acknowledge: respond 2xx
+  retry: exponential backoff with dead-letter queue
+  headers:
+  - X-TokenBot-Event
+  - X-TokenBot-Delivery-Id
+  - X-TokenBot-Signature
+  - X-TokenBot-Timestamp
+security:
+  signature_header: X-TokenBot-Signature
+  algorithm: HMAC-SHA256
+  signed_string: "${timestamp}.${raw_body}"
+  format: "sha256=<hex>"
+  replay_window: 5 minutes
+payload_shape:
+  fields: [event, event_id, timestamp, data]
+event_families:
+  count: 46
+  canonical_source: "@tokenbot-org/data-models WebhookEvent enum"
+  families:
+  - name: trade
+    events: [trade.created, trade.updated, trade.executed, trade.filled, trade.cancelled, trade.failed, trade.closed]
+    note: trade.filled is a deprecated alias of trade.executed.
+  - name: position
+    events: [position.opened, position.closed]
+  - name: strategy
+    events: [strategy.created, strategy.updated, strategy.activated]
+  commonly_fired: [trade, copier, copy, strategy, exchange, reward, withdrawal]
+note: >-
+  TokenBot documents a webhook surface but publishes no AsyncAPI document; this
+  file captures the webhook catalog verbatim from the docs. The full 46-event
+  enum lives in the @tokenbot-org/data-models package; the family/event lists
+  above are the subset published on the events docs page.

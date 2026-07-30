@@ -1,0 +1,28 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.tokenbot.com/home/api-docs/rate-limits
+scope: REST API
+window: per-minute
+keying: API key when authenticated, otherwise client IP
+rate_limits:
+- caller: authenticated
+  limit_count: 100
+  window: 1m
+  description: Valid API key — 100 requests per minute.
+- caller: unauthenticated
+  limit_count: 20
+  window: 1m
+  description: 20 requests per minute per IP.
+excluded_endpoints:
+- /health
+- /v1/health
+headers:
+- x-ratelimit-limit
+- x-ratelimit-remaining
+- x-ratelimit-reset
+exceeded:
+  status: 429
+  code: RATE_LIMITED
+  message: Rate limit exceeded. Please slow down.
+  details_fields: [limit, remaining, resetMs]
+increase_contact: support@tokenbot.com

@@ -1,0 +1,52 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.tokenbot.com/home/05-cli-reference
+name: tokenbot
+description: >-
+  First-party TokenBot CLI — the primary interface to the platform. Manages a
+  local secp256k1 identity, local/server-side exchange keys, strategies,
+  copiers, webhooks, rewards, and REST/GraphQL API keys.
+runtime: Node.js 22+
+install:
+- npm install -g tokenbot
+- brew tap tokenbot-org/tokenbot && brew install tokenbot
+config_dir: ~/.tokenbot
+global_options:
+- flag: --json
+  description: Emit machine-readable JSON instead of tables.
+- flag: --config <path>
+  description: Use an alternate config directory.
+- flag: --version
+- flag: --help
+command_groups:
+- group: identity
+  commands: [init, whoami, login, logout]
+- group: keys
+  description: Local exchange keys (encrypted on-machine, never sent to server).
+  commands: [keys add, keys list, keys remove]
+- group: balances
+  commands: [balance]
+- group: exchange
+  description: Server-side exchange accounts.
+  commands: [exchange list, exchange add, exchange supported]
+- group: strategy
+  commands: [strategy list, strategy show, strategy add, strategy delete]
+- group: copier
+  commands: [copier list, copier show, copier add, copier delete]
+- group: linking
+  commands: [link, unlink, links list]
+- group: webhooks
+  commands: [webhooks list, webhooks add, webhooks remove, webhooks test]
+- group: rewards
+  commands: [rewards show, rewards refer]
+- group: apikey
+  description: Server-side REST/GraphQL API keys.
+  commands: [apikey list, apikey create, apikey revoke]
+typical_first_session:
+- tokenbot init
+- tokenbot keys add --strategy <id>
+- tokenbot exchange add
+- tokenbot strategy add --name "Main"
+- tokenbot copier add --strategy <id> --allocation 50
+- tokenbot link --strategy <id> --copier <id>
+- tokenbot links list

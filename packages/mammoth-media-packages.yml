@@ -1,0 +1,39 @@
+generated: '2026-07-20'
+method: searched
+source: https://www.npmjs.com/package/tokenbot ; https://docs.tokenbot.com/home/05-cli-reference
+packages:
+- language: javascript
+  registry: npm
+  name: tokenbot
+  version: 0.1.0-beta.3
+  url: https://www.npmjs.com/package/tokenbot
+  install: npm install -g tokenbot
+  description: >-
+    TokenBot user-facing CLI — manage strategies, copiers, exchange links,
+    balances, and webhooks from your terminal.
+  repository: https://github.com/tokenbot-org/data-models
+  license: MIT
+  official: true
+- language: javascript
+  registry: npm
+  name: "@tokenbot-org/data-models"
+  version: 1.2.0
+  url: https://www.npmjs.com/package/@tokenbot-org/data-models
+  install: npm install @tokenbot-org/data-models
+  description: >-
+    TypeScript data model library for TokenBot applications — single source of
+    truth for database models, the WebhookEvent enum, and shared types.
+  repository: https://github.com/tokenbot-org/data-models
+  license: MIT
+  official: true
+- language: shell
+  registry: homebrew
+  name: tokenbot
+  url: https://github.com/tokenbot-org/homebrew-tokenbot
+  install: brew tap tokenbot-org/tokenbot && brew install tokenbot
+  description: Homebrew tap for the TokenBot CLI.
+  official: true
+notes: >-
+  The `tokenbot-mcp` MCP-server binary is referenced in the docs but was not
+  found published on the public npm registry at enrichment time. `@tokenbot-org/cli-core`
+  (the signed-request implementation) is referenced in docs but is not published publicly.

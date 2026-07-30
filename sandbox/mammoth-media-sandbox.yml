@@ -1,0 +1,24 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.tokenbot.com/home/api-docs/authentication ; .../rest-api/overview ; https://dev.tokenbot.com
+test_live_separation:
+  mechanism: API key prefix
+  live_prefix: tb_live_
+  test_prefix: tb_test_
+  create_test_key: tokenbot apikey create --name "my-app" --env test
+environments:
+  production_base_url: https://api.tokenbot.com/v1
+  development_base_url: https://api-dev.tokenbot.com/v1
+  testnet_login: https://dev.tokenbot.com/login
+public_test_endpoints:
+- GET /v1/health
+- GET /v1/health/detailed
+- GET /v1/version
+- GET /v1/auth/cli-challenge
+notes: >-
+  TokenBot separates test from live via the tb_test_/tb_live_ API-key prefixes
+  and a development base host (api-dev.tokenbot.com). No published static test
+  card / magic-value fixtures were found (this is a crypto copy-trading platform,
+  not a card acquirer). Exchange credentials are validated with the exchange_test
+  MCP tool / `tokenbot exchange add` before saving. Values above are published
+  verbatim; none were invented.

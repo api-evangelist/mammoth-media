@@ -1,0 +1,45 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.tokenbot.com/home/api-docs/errors
+format: custom-flat-json
+envelope:
+  fields: [statusCode, code, message, details]
+  note: >-
+    REST errors are a flat JSON object (NOT RFC 9457 problem+json). `details` is
+    optional and present only for some errors (validation, rate limiting).
+  example: '{"statusCode":401,"code":"UNAUTHENTICATED","message":"...","details":{}}'
+graphql_errors:
+  note: GraphQL uses the standard `errors` array plus a success/error envelope inside data.
+  fields: [message, path, errorType]
+problems:
+- status: 400
+  code: VALIDATION_ERROR
+  title: Malformed request or invalid parameters
+  details: Field-level details array (field, message).
+- status: 401
+  code: UNAUTHENTICATED
+  title: Invalid or missing authentication
+- status: 401
+  code: CLI_SIG_INVALID
+  title: Signed-request signature failed verification
+- status: 401
+  code: CLI_IDENTITY_UNKNOWN
+  title: The public key is not registered
+- status: 403
+  code: FORBIDDEN
+  title: Insufficient permissions
+- status: 404
+  code: NOT_FOUND
+  title: Resource not found
+- status: 409
+  code: CONFLICT
+  title: Resource already exists or state conflict
+- status: 429
+  code: RATE_LIMITED
+  title: Too many requests
+- status: 500
+  code: INTERNAL_ERROR
+  title: Unexpected server error
+- status: 503
+  code: SERVICE_UNAVAILABLE
+  title: An upstream dependency is unavailable

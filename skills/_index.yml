@@ -1,0 +1,19 @@
+generated: '2026-07-20'
+method: generated
+source: >-
+  Grounded in the TokenBot MCP tool surface and REST endpoints documented at
+  docs.tokenbot.com/home/api-docs (no OpenAPI available; operations are the
+  published MCP tool names / REST paths).
+skills:
+- file: mammoth-media-connect-and-copy.md
+  name: Connect an exchange and start copy-trading a strategy
+  api: https://docs.tokenbot.com/home/api-docs/rest-api/overview
+  operations: [exchange_test, exchange_add, strategy_create, copier_create, strategy_link_copiers, copier_start]
+- file: mammoth-media-monitor-trades.md
+  name: Monitor trades and react to fills
+  api: https://docs.tokenbot.com/home/api-docs/rest-api/overview
+  operations: [list_trades, get_trade, get_trade_analytics, trade_cancel]
+- file: mammoth-media-webhooks.md
+  name: Subscribe to and verify TokenBot webhooks
+  api: https://docs.tokenbot.com/home/api-docs/webhooks/overview
+  operations: [webhooks_add, webhooks_test]

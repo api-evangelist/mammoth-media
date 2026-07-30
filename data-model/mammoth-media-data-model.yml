@@ -1,0 +1,54 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.tokenbot.com/home/api-docs/rest-api/* (REST resource docs; no OpenAPI available)
+note: >-
+  Derived from the documented REST resource surface and example payloads (no
+  OpenAPI $ref graph is available — the spec endpoints require auth).
+entities:
+- name: user
+  id_prefix: tb_ (API keys encode the user)
+  endpoints: [GET /v1/me]
+- name: exchange_account
+  id_prefix: exc_
+  endpoints: [GET /v1/exchanges, GET /v1/supported-exchanges]
+  relationships:
+  - has_many: copiers
+    via: exchange_account_id
+- name: strategy
+  id_prefix: str_
+  endpoints: [GET/POST /v1/strategies, GET/PATCH/DELETE /v1/strategies/:id]
+  relationships:
+  - has_many: copiers
+    via: strategy_id
+  - belongs_to: exchange_account
+    via: exchange_account_id
+- name: copier
+  id_prefix: cop_
+  endpoints:
+  - GET/POST /v1/copiers
+  - GET/PATCH/DELETE /v1/copiers/:id
+  - POST /v1/copiers/:id/start
+  - POST /v1/copiers/:id/stop
+  relationships:
+  - belongs_to: strategy
+    via: strategy_id
+  - belongs_to: exchange_account
+    via: exchange_account_id
+- name: trade
+  id_prefix: trd_
+  endpoints: [GET /v1/trades, GET /v1/trades/:id]
+  relationships:
+  - belongs_to: strategy
+    via: strategy_id
+  - belongs_to: exchange_account
+    via: exchange_account_id
+- name: trade_pair
+  endpoints: [GET /v1/trade-pairs]
+- name: webhook
+  endpoints: [GET/POST /v1/webhooks]
+- name: event
+  id_prefix: evt_
+  note: Webhook event objects (46 types).
+- name: api_key
+  endpoints: [POST /v1/api-keys, GET /v1/api-keys, DELETE /v1/api-keys/:id, POST /v1/api-keys/:id/rotate]
+other_resources: [notifications, settings, rewards, withdrawals, trading-bot, market-maker]

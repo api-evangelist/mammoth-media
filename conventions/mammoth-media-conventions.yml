@@ -1,0 +1,54 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.tokenbot.com/home/api-docs/rest-api/overview ; .../authentication ; .../rate-limits ; .../webhooks/security
+authentication:
+  style: API key (X-API-Key / Authorization Bearer) or secp256k1 signed request
+  ref: authentication/mammoth-media-authentication.yml
+pagination:
+  style: offset
+  params:
+    limit: { default: 20, max: 100 }
+    offset: { default: 0 }
+  ref: List endpoints
+sorting:
+  params: [sort, order]
+  order_values: [asc, desc]
+idempotency:
+  supported: true
+  mechanisms:
+  - surface: webhooks
+    header: X-TokenBot-Delivery-Id
+    guidance: >-
+      Each webhook delivery carries a unique X-TokenBot-Delivery-Id; consumers
+      use it to de-duplicate/idempotently process redelivered events.
+  - surface: signed-request
+    mechanism: one-time nonce (x-tb-nonce) remembered for a 10-minute replay window
+    guidance: Prevents replay of signed CLI requests.
+request_signing:
+  webhooks:
+    signature_header: X-TokenBot-Signature
+    algorithm: HMAC-SHA256
+    signed_string: "${timestamp}.${raw_body}"
+    format: "sha256=<hex>"
+    timestamp_header: X-TokenBot-Timestamp
+    replay_window: 5 minutes
+  rest_cli:
+    algorithm: secp256k1
+    ref: authentication/mammoth-media-authentication.yml
+versioning:
+  scheme: uri-path
+  current: v1
+  ref: lifecycle/mammoth-media-lifecycle.yml
+error_envelope:
+  shape: flat JSON (statusCode, code, message, details)
+  ref: errors/mammoth-media-problem-types.yml
+rate_limit_signaling:
+  headers: [x-ratelimit-limit, x-ratelimit-remaining, x-ratelimit-reset]
+  ref: rate-limits/mammoth-media-rate-limits.yml
+id_prefixes:
+  exchange_account: exc_
+  strategy: str_
+  copier: cop_
+  trade: trd_
+  event: evt_
+  api_key_user: tb_

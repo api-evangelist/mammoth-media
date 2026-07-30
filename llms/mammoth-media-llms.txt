@@ -1,0 +1,58 @@
+# TokenBot
+
+## Platform Overview
+
+- [What is TokenBot?](https://docs.tokenbot.com/home/01-what-is-tokenbot.md)
+- [Why TokenBot Exists](https://docs.tokenbot.com/home/02-why-tokenbot-exists.md)
+- [How TokenBot Works](https://docs.tokenbot.com/home/03-how-it-works.md)
+- [Supported Exchanges](https://docs.tokenbot.com/home/04-supported-exchanges.md)
+- [The TokenBot CLI](https://docs.tokenbot.com/home/05-cli-reference.md)
+- [Rewards & Referral Program](https://docs.tokenbot.com/home/06-rewards-and-referrals.md)
+- [Transparency: Why Referral Links?](https://docs.tokenbot.com/home/07-transparency-referral-links.md)
+- [Security & Trust](https://docs.tokenbot.com/home/08-security-and-trust.md)
+- [Frequently Asked Questions](https://docs.tokenbot.com/home/09-faq.md)
+- [TBOT Tokenomics](https://docs.tokenbot.com/home/10-tokenomics.md)
+- [Bot Operator CLIs](https://docs.tokenbot.com/home/11-bot-operator-clis.md)
+
+## API Documentation
+
+- [Overview](https://docs.tokenbot.com/home/api-docs/readme.md)
+- [Quick Start](https://docs.tokenbot.com/home/api-docs/quickstart.md)
+- [Authentication](https://docs.tokenbot.com/home/api-docs/authentication.md)
+- [Rate Limits](https://docs.tokenbot.com/home/api-docs/rate-limits.md)
+- [Errors](https://docs.tokenbot.com/home/api-docs/errors.md)
+- [Overview](https://docs.tokenbot.com/home/api-docs/rest-api/overview.md)
+- [Exchanges](https://docs.tokenbot.com/home/api-docs/rest-api/exchanges.md)
+- [Strategies](https://docs.tokenbot.com/home/api-docs/rest-api/strategies.md)
+- [Copiers](https://docs.tokenbot.com/home/api-docs/rest-api/copiers.md)
+- [Trades](https://docs.tokenbot.com/home/api-docs/rest-api/trades.md)
+- [Trade Pairs](https://docs.tokenbot.com/home/api-docs/rest-api/trade-pairs.md)
+- [Rewards](https://docs.tokenbot.com/home/api-docs/rest-api/rewards.md)
+- [Notifications](https://docs.tokenbot.com/home/api-docs/rest-api/notifications.md)
+- [Settings](https://docs.tokenbot.com/home/api-docs/rest-api/settings.md)
+- [Withdrawals](https://docs.tokenbot.com/home/api-docs/rest-api/withdrawals.md)
+- [API Keys](https://docs.tokenbot.com/home/api-docs/rest-api/api-keys.md)
+- [Supported Exchanges](https://docs.tokenbot.com/home/api-docs/rest-api/supported-exchanges.md)
+- [Version](https://docs.tokenbot.com/home/api-docs/rest-api/version.md)
+- [Health](https://docs.tokenbot.com/home/api-docs/rest-api/health.md)
+- [Trading Bot](https://docs.tokenbot.com/home/api-docs/rest-api/trading-bot.md)
+- [Market Maker](https://docs.tokenbot.com/home/api-docs/rest-api/market-maker.md)
+- [Overview](https://docs.tokenbot.com/home/api-docs/graphql-api/overview.md)
+- [Queries](https://docs.tokenbot.com/home/api-docs/graphql-api/queries.md)
+- [Mutations](https://docs.tokenbot.com/home/api-docs/graphql-api/mutations.md)
+- [Subscriptions](https://docs.tokenbot.com/home/api-docs/graphql-api/subscriptions.md)
+- [Overview](https://docs.tokenbot.com/home/api-docs/webhooks/overview.md)
+- [Management](https://docs.tokenbot.com/home/api-docs/webhooks/management.md)
+- [Events](https://docs.tokenbot.com/home/api-docs/webhooks/events.md)
+- [Security](https://docs.tokenbot.com/home/api-docs/webhooks/security.md)
+- [Delivery](https://docs.tokenbot.com/home/api-docs/webhooks/delivery.md)
+- [Overview](https://docs.tokenbot.com/home/api-docs/mcp/overview.md)
+- [Tools](https://docs.tokenbot.com/home/api-docs/mcp/tools.md)
+
+## Legal Information
+
+- [Overview](https://docs.tokenbot.com/home/legal-information/readme.md)
+- [Privacy Policy](https://docs.tokenbot.com/home/legal-information/privacy-policy.md)
+- [Terms & Conditions](https://docs.tokenbot.com/home/legal-information/terms-and-conditions.md)
+- [Disclaimer](https://docs.tokenbot.com/home/legal-information/disclaimer.md)
+- [Cookie Policy](https://docs.tokenbot.com/home/legal-information/cookie-policy.md)

@@ -1,0 +1,59 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.tokenbot.com/home/api-docs/authentication
+docs: https://docs.tokenbot.com/home/api-docs/authentication
+summary:
+  types: [apiKey, http, signed-request, jwt]
+  api_key_in: [header]
+  api_key_headers: [X-API-Key, Authorization]
+  notes: >-
+    REST API accepts an API key via X-API-Key or Authorization: Bearer (the
+    bearer value is treated as an API key, not a verified JWT). The tokenbot CLI
+    uses a secp256k1 signed-request fast-path. The GraphQL API accepts a JWT
+    bearer token (from login) or the CLI signed request.
+schemes:
+- name: apiKey
+  type: apiKey
+  in: header
+  parameter_name: X-API-Key
+  applies_to: REST API
+  key_format:
+    production: tb_live_<...>
+    test: tb_test_<...>
+  permissions: [ADMIN required for /v1/api-keys management]
+- name: bearer
+  type: http
+  scheme: bearer
+  applies_to: REST API
+  note: Authorization Bearer value is interpreted as an API key (no standalone JWT verification on REST).
+- name: signed-request
+  type: signed-request
+  scheme: secp256k1
+  applies_to: REST API + GraphQL (CLI fast-path)
+  headers:
+  - x-tb-pubkey
+  - x-tb-timestamp
+  - x-tb-nonce
+  - x-tb-sig
+  canonical_string: "${METHOD}\\n${path}\\n${timestamp}\\n${nonce}\\n${sha256(body)}"
+  replay_protection:
+    clock_skew: "+/-60 seconds"
+    nonce_window: 10 minutes
+  implemented_by: "@tokenbot-org/cli-core"
+- name: jwt
+  type: http
+  scheme: bearer
+  bearer_format: JWT
+  applies_to: GraphQL API
+  note: JWT obtained from the login mutation.
+- name: mcp-service-token
+  type: apiKey
+  in: header
+  parameter_name: X-Service-Token
+  applies_to: MCP server -> GraphQL backend
+  companion_header: X-User-Id
+public_endpoints:
+- GET /v1/health
+- GET /v1/health/detailed
+- GET /v1/version
+- GET /v1/auth/cli-challenge

@@ -1,0 +1,33 @@
+generated: '2026-07-20'
+method: derived
+source: docs prose (no OpenAPI available — REST/GraphQL endpoints return 401)
+standards:
+- id: oauth2
+  conforms: false
+  evidence: Auth is API-key / secp256k1 signed request / JWT — no OAuth2 flows documented.
+- id: oidc
+  conforms: false
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: Errors are a custom flat JSON object, not application/problem+json.
+- id: rfc9116-security-txt
+  conforms: false
+  evidence: /.well-known/security.txt not served (probe 401/404).
+- id: webhooks-hmac-signing
+  conforms: true
+  evidence: Webhook deliveries signed HMAC-SHA256 via X-TokenBot-Signature with replay window.
+- id: pagination-offset
+  conforms: true
+  evidence: List endpoints support limit/offset (max 100) with sort/order.
+- id: rate-limit-headers
+  conforms: true
+  evidence: x-ratelimit-limit / -remaining / -reset headers on every response.
+- id: rest
+  conforms: true
+  evidence: Versioned REST API under https://api.tokenbot.com/v1.
+- id: graphql
+  conforms: true
+  evidence: GraphQL API with queries, mutations, and subscriptions.
+- id: mcp
+  conforms: true
+  evidence: Published stdio MCP server (tokenbot-mcp) with 25 tools, 7 resources, 4 prompts.
