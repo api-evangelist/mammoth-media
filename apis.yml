@@ -1,8 +1,34 @@
 aid: mammoth-media
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/mammoth-media.png
 name: Mammoth Media
-description: 'Mammoth Media is a company surfaced as a portfolio company of greylock and added to the
-  API Evangelist network as a stub for enrichment. Sector: consumer. This profile is a lead awaiting the
-  enrichment pipeline.'
+x-enrichment:
+  date: '2026-07-20'
+  status: enriched
+  artifacts_added: 19
+  pass: local-v1
+description: >-
+  Mammoth Media is a Greylock-backed consumer technology company whose current
+  product is TokenBot (mammoth.la now redirects to tokenbot.com) — a social,
+  copy-trading platform for cryptocurrency communities on Discord and Telegram
+  that synchronizes algorithmic trades across 12+ exchanges in real time. For
+  developers TokenBot exposes a documented REST API (api.tokenbot.com/v1), a
+  GraphQL API, HMAC-signed webhooks with 46 event types, a stdio Model Context
+  Protocol (MCP) server exposing 25 tools, and a first-party `tokenbot` CLI
+  distributed via npm and Homebrew. Authentication is API-key (tb_live_/tb_test_)
+  or a secp256k1 signed-request fast-path; the CLI-first design keeps exchange
+  keys under user control (trade-only permissions, no withdrawal access).
 url: https://raw.githubusercontent.com/api-evangelist/mammoth-media/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -12,11 +38,41 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-20'
 tags:
 - Company
 - Consumer
-apis: []
+- Cryptocurrency
+- Trading
+- Copy Trading
+- Fintech
+- Webhooks
+- MCP
+- Developer Tools
+- CLI
+apis:
+- name: TokenBot API
+  description: >-
+    REST + GraphQL API for TokenBot copy-trading — manage exchange accounts,
+    strategies, copiers, trades, notifications, rewards, withdrawals, API keys,
+    and webhooks. API-key or secp256k1 signed-request auth.
+  humanURL: https://docs.tokenbot.com/home/api-docs/rest-api/overview
+  baseURL: https://api.tokenbot.com/v1
+  tags:
+  - Trading
+  - Copy Trading
+  - Cryptocurrency
+  properties:
+  - type: Documentation
+    url: https://docs.tokenbot.com/home/api-docs/readme
+  - type: Authentication
+    url: authentication/mammoth-media-authentication.yml
+  - type: Webhooks
+    url: asyncapi/mammoth-media-webhooks.yml
+  - type: RateLimits
+    url: rate-limits/mammoth-media-rate-limits.yml
+  - type: ErrorCatalog
+    url: errors/mammoth-media-problem-types.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -24,4 +80,62 @@ maintainers:
   email: info@apis.io
 common:
 - type: Website
-  url: http://mammoth.la
+  url: https://www.tokenbot.com
+- type: DeveloperPortal
+  url: https://docs.tokenbot.com
+- type: Documentation
+  url: https://docs.tokenbot.com/home/api-docs/readme
+- type: APIReference
+  url: https://docs.tokenbot.com/home/api-docs/rest-api/overview
+- type: GettingStarted
+  url: https://docs.tokenbot.com/home/api-docs/quickstart
+- type: Authentication
+  url: authentication/mammoth-media-authentication.yml
+- type: GitHubOrganization
+  url: https://github.com/tokenbot-org
+- type: StatusPage
+  url: https://status.tokenbot.com
+- type: SignUp
+  url: https://dev.tokenbot.com/login
+- type: TermsOfService
+  url: https://docs.tokenbot.com/home/legal-information/terms-and-conditions
+- type: PrivacyPolicy
+  url: https://docs.tokenbot.com/home/legal-information/privacy-policy
+- type: Support
+  url: mailto:support@tokenbot.com
+- type: X
+  url: https://x.com/tokenbot
+- type: Packages
+  url: packages/mammoth-media-packages.yml
+- type: SDKs
+  url: packages/mammoth-media-packages.yml
+- type: CLI
+  url: cli/mammoth-media-cli.yml
+- type: MCPServer
+  url: mcp/mammoth-media-mcp.yml
+- type: LLMsTxt
+  url: llms/mammoth-media-llms.txt
+- type: Webhooks
+  url: asyncapi/mammoth-media-webhooks.yml
+- type: RateLimits
+  url: rate-limits/mammoth-media-rate-limits.yml
+- type: ErrorCatalog
+  url: errors/mammoth-media-problem-types.yml
+- type: Conventions
+  url: conventions/mammoth-media-conventions.yml
+- type: Idempotency
+  url: conventions/mammoth-media-conventions.yml
+- type: Conformance
+  url: conformance/mammoth-media-conformance.yml
+- type: Lifecycle
+  url: lifecycle/mammoth-media-lifecycle.yml
+- type: Sandbox
+  url: sandbox/mammoth-media-sandbox.yml
+- type: DataModel
+  url: data-model/mammoth-media-data-model.yml
+- type: DomainSecurity
+  url: security/mammoth-media-domain-security.yml
+- type: WellKnown
+  url: well-known/mammoth-media-well-known.yml
+- type: AgentSkill
+  url: skills/_index.yml
