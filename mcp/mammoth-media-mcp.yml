@@ -6,10 +6,9 @@ server:
   name: tokenbot
   binary: tokenbot-mcp
   transport: stdio
-  description: >-
-    The TokenBot MCP server lets AI assistants interact with the TokenBot
-    platform — exchanges, strategies, copiers, trades, and user context — as
-    MCP tools, plus read-only resources and guided prompts.
+  description: The TokenBot MCP server lets AI assistants interact with the TokenBot platform — exchanges,
+    strategies, copiers, trades, and user context — as MCP tools, plus read-only resources and guided
+    prompts.
 auth:
   backend: TokenBot GraphQL
   env:
@@ -93,3 +92,9 @@ tools:
   description: Aggregated trade performance metrics (optional strategyId).
 - name: trade_cancel
   description: Cancel a trade by id.
+deployment:
+  mode: local-stdio
+  verified: searched
+  tools: 25
+  checked: '2026-08-12'
+  source: catalog MCP census
