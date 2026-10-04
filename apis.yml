@@ -27,6 +27,9 @@ accessModel:
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/mammoth-media.png
 name: Mammoth Media
+x-docs-platform: gitbook
+x-docs-platform-confidence: high
+x-docs-platform-checked: 2026-10-03
 x-enrichment:
   date: '2026-07-20'
   status: enriched
