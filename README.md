@@ -64,6 +64,112 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Mammoth Media is a company surfaced as a portfolio company of greylock and added to the API Evangelist network as a stub for enrichment. Sector: consumer. This profile is a lead awaiting the enrichment pipeline.
+Mammoth Media is a Greylock-backed consumer technology company whose current product is TokenBot (mammoth.la now redirects to tokenbot.com) — a social, copy-trading platform for cryptocurrency communities on Discord and Telegram that synchronizes algorithmic trades across 12+ exchanges in real time. For developers TokenBot exposes a documented REST API (api.tokenbot.com/v1), a GraphQL API, HMAC-signed webhooks with 46 event types, a stdio Model Context Protocol (MCP) server exposing 25 tools, and a first-party `tokenbot` CLI distributed via npm and Homebrew. Authentication is API-key (tb_live_/tb_test_) or a secp256k1 signed-request fast-path; the CLI-first design keeps exchange keys under user control (trade-only permissions, no withdrawal access).
 
-Backed by: greylock — http://mammoth.la
+**Areas:** Company · Consumer · Cryptocurrency · Trading · Copy Trading · Fintech · Webhook · MCP · Developer Tools · CLI
+
+## Mammoth Media on APIs.io
+
+Everything profiled for Mammoth Media is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/mammoth-media/](https://apis.io/providers/mammoth-media/)** — or go straight to one of the APIs or properties below.
+
+### APIs (1)
+
+- [TokenBot API](https://apis.io/apis/mammoth-media/tokenbot-api/) — REST + GraphQL API for TokenBot copy-trading — manage exchange accounts, strategies, copiers, trades, notifications, rewards, withdrawals, API keys, and…
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### AsyncAPI (1)
+
+Event-driven and webhook contracts.
+
+- [Mammoth Media Webhooks](https://apis.io/asyncapis/mammoth-media/mammoth-media-webhooks/)
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [tokenbot](https://apis.io/servers/mammoth-media/tokenbot/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Mammoth Media Authentication](https://apis.io/security/mammoth-media/mammoth-media-authentication/)
+- [Mammoth Media Domain Security](https://apis.io/security/mammoth-media/mammoth-media-domain-security/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Mammoth Media Rate Limits](https://apis.io/rate-limits/mammoth-media/mammoth-media-rate-limits/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.tokenbot.com)
+- [Documentation](https://docs.tokenbot.com/home/api-docs/readme)
+- [Getting started](https://docs.tokenbot.com/home/api-docs/quickstart)
+- [API reference](https://docs.tokenbot.com/home/api-docs/rest-api/overview)
+- [Sign up](https://dev.tokenbot.com/login)
+- [Terms of service](https://docs.tokenbot.com/home/legal-information/terms-and-conditions)
+- [Privacy policy](https://docs.tokenbot.com/home/legal-information/privacy-policy)
+- [GitHub](https://github.com/tokenbot-org)
+- [Status](https://status.tokenbot.com)
+
+## API Evangelist rating
+
+**Kin Score 45.1** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 71.7 |
+| Contract quality | 39.0 |
+| Contract governance | 4.5 |
+| Operational transparency | 47.4 |
+| Developer ergonomics | 78.0 |
+| Access clarity | 27.6 |
+
+**Agent readiness 32.8** — agent-ready
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | documented (partial credit) |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | documented (partial credit) |
+| Error Semantics | documented (partial credit) |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | yes |
+| Agent Skills | derived (partial credit) |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | na |
+
+**Regulatory alignment 23.1** — Securities & Market Data
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/mammoth-media/](https://apis.io/providers/mammoth-media/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Mammoth Media: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/mammoth-media/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
